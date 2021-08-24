@@ -3,7 +3,12 @@
 }
 
 :root {
+  --main-black-color: #484848;
   --main-red-color: #e06262;
+}
+
+.main-black-color {
+  color: var(--main-black-color);
 }
 
 .main-red-color {
@@ -33,7 +38,7 @@ html {
 
 .container {
   width: 600px;
-  height: 720px;
+  height: 800px;
   background-color: #f2eecb;
   border-radius: 4px;
 
@@ -41,21 +46,26 @@ html {
 }
 
 .frame {
-  border: 1px solid #484848;
+  border: 1px solid var(--main-black-color);
   height: 100%;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
   display: flex;
   align-items: flex-start;
+
+  padding-top: 24px;
 }
 
 .header-title {
   flex: 1;
   text-align: center;
+
+  color: var(--main-black-color);
   font-size: 3.6rem;
   font-family: "Special Elite", cursive;
   text-transform: lowercase;
@@ -71,6 +81,14 @@ html {
   background: unset;
   border: unset;
   outline: unset;
+}
+
+.header-btn.main-black-color:active {
+  text-shadow: 1px 1px 2px var(--main-black-color);
+}
+
+.header-btn.main-red-color:active {
+  text-shadow: 1px 1px 2px var(--main-red-color);
 }
 
 .add {
@@ -101,11 +119,42 @@ html {
   font-size: 1.8rem;
   font-family: "Bungee", sans-serif;
 
-  padding: 16px;
+  margin-bottom: 16px;
+  padding-top: 0px;
+  padding-bottom: 8px;
   padding-right: unset;
   cursor: pointer;
 
   background: unset;
   border: unset;
   outline: unset;
+}
+
+.add-btn.main-black-color:active {
+  text-shadow: 1px 1px 2px var(--main-black-color);
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo {
+  position: relative;
+
+  flex: 1 0 auto;
+  text-align: center;
+
+  min-height: 34px;
+  margin: 16px 0px 0px;
+  font-family: "Special Elite", cursive;
+  font-size: 24px;
+
+  border-bottom: 1px solid var(--main-red-color);
+}
+
+.todo-text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
